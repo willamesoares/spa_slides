@@ -1,19 +1,26 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
 
-import Hero from '../presentational/Hero';
-import ToolList from '../presentational/ToolList';
+import Home from '../presentational/Home/Home';
+import Slide from '../presentational/Slide/Slide';
+import SlideList from '../presentational/Slide/SlideList';
 
-import tools from '../../tools';
+import './App.scss';
 
 const App = () => (
-  <div className="App">
-    <Hero
-      title="JStart"
-      subtitle="Yet another boilerplate for frontend applications. Enjoy!"
-    />
-
-    <ToolList toolList={tools} />
-  </div>
+  <Router>
+    <div className="App container">
+      <div className="row">
+        <Route exact path="/" component={Home} />
+        <Route exact path="/slides" component={SlideList} />
+        <Route path="/slides/:id" component={Slide} />
+      </div>
+    </div>
+  </Router>
 );
 
 export default App;

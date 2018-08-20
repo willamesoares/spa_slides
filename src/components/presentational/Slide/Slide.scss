@@ -1,0 +1,20 @@
+.Slide {
+
+  &__id {
+    position: absolute;
+    right: 50%;
+  }
+
+  &__arrows {
+    display: flex;
+    justify-content: space-between;
+
+    a {
+      text-decoration: none;
+    }
+
+    &--right {
+      margin-left: auto;
+    }
+  }
+}
